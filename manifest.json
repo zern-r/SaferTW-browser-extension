@@ -1,0 +1,64 @@
+{
+    "manifest_version": 3,
+    "name": "SaferTW 違規傳輸套件 — 安全台灣",
+    "description": "自動匹配各縣市檢舉流程，與安全台灣線上系統做整合搭配，維護交通安全，你我都有幫忙",
+    "version": "0.1.5",
+    "icons": {
+        "16": "logo/logo-16.png",
+        "48": "logo/logo-48.png",
+        "128": "logo/logo-128.png"
+    },
+    "options_page": "settings/settings.html",
+    "action": {
+        "default_title": "SaferTW 違規傳輸套件",
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": ["storage"],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "content_scripts": [{
+        "js": [
+            "libs/jquery.min.js", 
+            "libs/ext.exif-viewer.js", 
+            "libs/sweetalert.min.js", 
+            "libs/jszip.min.js", 
+            "foreground.js"
+        ],
+        "css": ["libs/safer.style.css"],
+        "matches": [
+            "http://localhost/*", 
+            "https://tvrweb.typd.gov.tw:3444/*",
+            "https://prsweb.tcpd.gov.tw/*",
+            "https://tvrweb.police.taichung.gov.tw/*",
+            "https://tr.tnpd.gov.tw/TrafficMailbox/*",
+            "https://policemail.kcg.gov.tw/*",
+            "https://trv.mpb.gov.tw/Home/*",
+            "https://traffic.chpb.gov.tw/ViolatePetition/C005400/*",
+            "https://trv.ylhpb.gov.tw/Home/*",
+            "https://www.cypd.gov.tw/TrafficMailbox/*",
+            "https://ppl.report.ilcpb.gov.tw/*",
+            "https://hlpb.twgov.mobi/order/*",
+            "https://tptv.klg.gov.tw/reportcase/*",
+            "https://tra2.hccp.gov.tw/new/*",
+            "https://traffic.hchpb.gov.tw/*",
+            "https://trafficmailbox.ptpolice.gov.tw/*",
+            "https://trn.ccpb.gov.tw/*",
+            "https://www.ttcpb.gov.tw/*",
+            "https://www.phpb.gov.tw/*",
+            "https://wos.hpb.gov.tw/*",
+            "https://jiaowei.ncpd.gov.tw/*",
+            "https://tvrs.ntpd.gov.tw/*"
+        ],
+        "run_at": "document_idle",
+        "world": "MAIN"
+    },{
+      "matches": ["<all_urls>"],
+      "js": ["content-isolated.js"],
+      "run_at": "document_idle",
+      "world": "ISOLATED"
+    }]
+}

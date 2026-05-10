@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+    <title>設定頁面</title>
+</head>
+<body>
+
+<div class="popup-container">
+
+  <div class="popup-header">
+    <h2>設定</h2>
+    <p>檢舉者基本資料設定<br><small>僅儲存於本機瀏覽器，用於自動輸入使用</small></p>
+  </div>
+
+  <div class="form-group">
+    <label for="input_UserName">姓名</label>
+    <input id="input_UserName" type="text" placeholder="請輸入姓名">
+  </div>
+  <div class="form-group">
+    <label for="input_UserID">身分證字號</label>
+    <input id="input_UserID" type="text" placeholder="請輸入身分證字號">
+  </div>
+  <div class="form-group">
+    <label for="input_UserEmail">Email</label>
+    <input id="input_UserEmail" type="email" placeholder="請輸入 Email">
+  </div>
+  <div class="form-group">
+    <label for="input_UserPhone">聯絡手機</label>
+    <input id="input_UserPhone" type="tel" placeholder="請輸入聯絡手機">
+  </div>
+  <div class="form-group">
+    <label for="input_UserAddress">通訊地址</label>
+    <input id="input_UserAddress" type="text" placeholder="請輸入通訊地址">
+  </div>
+
+  <button id="save_input" class="btn">儲存設定</button>
+
+  <div class="popup-footer">
+    <span>&copy;2025-<span id="current-year"></span> <a href="https://safer.tw/" target="_blank">安全台灣 SaferTW</a></span>
+  </div>
+
+</div>
+
+<script src="../libs/jquery.min.js" type="text/javascript"></script>
+<script src="../libs/sweetalert.min.js" type="text/javascript"></script>
+<script src="setting.js" type="text/javascript"></script>
+
+</body>
+</html>

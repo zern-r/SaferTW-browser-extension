@@ -1,0 +1,228 @@
+.chk-list label {
+    width: 200px;
+    border-radius: 3px;
+    font-weight:bold;
+    border: 1px solid #D1D3D4
+  }
+  .chk-list div{
+      display:inline-block;
+      width:47%;
+  }
+  .chk-list input.radio:empty {
+      margin-left: -999px;
+  }
+  
+  .chk-list input.radio:empty ~ label {
+      position: relative;
+      float: left;
+      line-height: 2.5em;
+      text-indent: 3.25em;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+  .chk-list input.radio:empty ~ label:before {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      width: 2.5em;
+      background: #D1D3D4;
+      border-radius: 3px 0 0 3px;
+  }
+  .chk-list input.radio:hover:not(:checked) ~ label:before {
+      content:'\2714';
+      text-indent: .9em;
+      color: #C2C2C2;
+  }
+  
+  .chk-list input.radio:hover:not(:checked) ~ label {
+      color: #888;
+  }
+  
+  .chk-list input.radio:checked ~ label:before {
+      content:'\2714';
+      text-indent: .9em;
+      color: #9CE2AE;
+      background-color: #4DCB6D;
+  }
+  
+  .chk-list input.radio:checked ~ label {
+      color: #777;
+  }
+  
+  .chk-list input.radio:focus ~ label:before {
+      box-shadow: 0 0 0 3px #999;
+  }
+  .tabs {
+    position: relative;
+    width: 25em;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .tabs li {
+    float: left;
+  }
+  
+  .trigger {
+    color: #aaa;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 4em;
+    display: block;
+    padding: 0 .5em;
+    background:#eee;
+    padding:5px;
+  }
+  
+  li:first-child .trigger {
+    margin-left: 4.8em;
+  }
+  
+  li:last-child .trigger {
+    position: absolute;
+    left: 0;
+  }
+  .content {
+    display: none;
+    position: absolute;
+    margin-top:15px;
+    top: 2em;
+    left: 0;
+    padding: 0 .5em;
+    width:420px;
+  }
+  .content select{
+      float:right;
+      
+  }
+  li:target .content,
+  li:last-child .content {
+    display: block;
+  }
+  
+  li:target .trigger,
+  li:last-child .trigger {
+    color: #000;
+  }
+  
+  li:target ~ li:last-child .content {
+    display: none;
+  }
+  
+  li:target ~ li:last-child .trigger {
+    color: #aaa;
+  }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f0f4ff;
+}
+
+.popup-container {
+  width: 320px;
+  padding: 16px 20px 12px;
+  box-sizing: border-box;
+}
+
+.popup-header {
+  margin-bottom: 14px;
+  border-bottom: 2px solid #4285f4;
+  padding-bottom: 10px;
+}
+
+.popup-header h2 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: #1a73e8;
+}
+
+.popup-header p {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.popup-header small {
+  color: #888;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.form-group label {
+  width: 76px;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  text-align: right;
+}
+
+input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+  font-size: 13px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  background: #fff;
+}
+
+input:focus {
+  border-color: #4285f4;
+  box-shadow: 0 0 0 3px rgba(66,133,244,0.15);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 9px 0;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(66,133,244,0.3);
+}
+
+.btn:hover {
+  background-color: #3367d6;
+  box-shadow: 0 4px 10px rgba(66,133,244,0.4);
+}
+
+.popup-footer {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #dde3f0;
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+}
+
+.popup-footer a {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+.popup-footer a:hover {
+  text-decoration: underline;
+}
