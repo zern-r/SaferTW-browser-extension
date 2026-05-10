@@ -55,18 +55,18 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    subgraph 您的裝置（本機）
-        A[設定頁面\n輸入個人資料] -->|chrome.storage.local| B[(本機瀏覽器\n加密儲存區)]
-        B -->|讀取| C[foreground.js\n自動填表腳本]
+    subgraph local["您的裝置 (本機)"]
+        A["設定頁面\n輸入個人資料"] -->|chrome.storage.local| B[("本機瀏覽器\n加密儲存區")]
+        B -->|讀取| C["foreground.js\n自動填表腳本"]
         C --> D[縣市檢舉表單]
-        E[ZIP 解壓縮\n本機處理] --> C
+        E["ZIP 解壓縮\n本機處理"] --> C
     end
 
-    subgraph safer.tw 平台
-        F[整理檢舉資料] -->|產生接收代碼| G[STUN 信令伺服器\n僅用於建立連線]
+    subgraph safertw["safer.tw 平台"]
+        F[整理檢舉資料] -->|產生接收代碼| G["STUN 信令伺服器\n僅用於建立連線"]
     end
 
-    G -->|WebRTC 點對點\n資料直傳，不過伺服器| E
+    G -->|"WebRTC 點對點\n資料直傳，不過伺服器"| E
 
     style B fill:#d4edda,stroke:#28a745,color:#000
     style G fill:#fff3cd,stroke:#ffc107,color:#000
